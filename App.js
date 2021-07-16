@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Dimensions, TouchableWithoutFeedback } from 'react-native';
-import Bird from './components/Bird';
-import Obstacles from './components/Obstacles';
+import Bird from './components/Bird.jsx';
+import Obstacles from './components/Obstacles.jsx';
 
 // permissions
 
@@ -20,6 +20,12 @@ export default function App() {
     const { status } = await Permissions.askAsync(Permissions.CONTACTS);
     setPermissions(true);
   };
+
+  const showContacts = async () => {
+    const contactList = await Contacts.getContactsAsync();
+    setContacts(contactList.data);
+  };
+
 
   const phoneScreenWidth = Dimensions.get('screen').width;
   const phoneScreenHeight = Dimensions.get('screen').height;
@@ -48,6 +54,12 @@ export default function App() {
 
   // console.log(phoneScreenWidth);
   // console.log(phoneScreenHeight);
+
+  // Ask Permission
+
+  useEffect( () => {
+    getPermissions();
+  }, []);
 
   // Update bird falling
 
