@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.soulsreaperx.lab41"
     },
     "web": {
       "favicon": "./assets/favicon.png"
