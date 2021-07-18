@@ -15,7 +15,7 @@ The application is staight forward, when you open the app, the game will start, 
 ## Links
 
 [Repo](https://github.com/AmjadMesmar/js-401n15-class-10)
-[Published link](exp://exp.host/@soulsreaperx/lab-41)
+[Published link](https://expo.io/@soulsreaperx/lab-41)
 [Snack](https://snack.expo.io/@soulsreaperx/github.com-amjadmesmar-js-401n15-class-10)
 
 ## Author
