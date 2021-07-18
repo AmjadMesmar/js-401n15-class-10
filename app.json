@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Lab-41",
-    "slug": "test",
+    "name": "Lab-41 simple game",
+    "slug": "lab-41",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This is a simple game made with react native for learning purpose.",
+    "githubUrl": "https://github.com/AmjadMesmar/js-401n15-class-10"
   }
 }

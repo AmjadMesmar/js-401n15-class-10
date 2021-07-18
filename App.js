@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Button, NativeModules, TouchableWithoutFeedback } from 'react-native';
+import RNRestart from 'react-native-restart';
+import { WebView } from 'react-native-webview';
 import Bird from './components/Bird.jsx';
 import Obstacles from './components/Obstacles.jsx';
 
@@ -41,13 +43,11 @@ export default function App() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [score, setScore] = useState(0);
 
-  const gameGravity = 3;
-
   let gameTimerId;
   let obstaclesTimerId;
   let obstaclesTimerIdTwo;
 
-
+  const gameGravity = 3;
   const obstaclesWidth = 60;
   const obstaclesHeight = 250;
   // let gap = 200;
@@ -57,7 +57,7 @@ export default function App() {
 
   // Ask Permission
 
-  useEffect( () => {
+  useEffect(() => {
     getPermissions();
   }, []);
 
@@ -147,13 +147,30 @@ export default function App() {
     setIsGameOver(true)
   }
 
+  const restartGame = () => {
+    NativeModules.DevSettings.reload();
+  }
+
   // console.log(birdBottom);
   // console.log('gap', gap);
 
   return (
     <TouchableWithoutFeedback onPress={jump}>
       <View style={styles.container}>
-        {isGameOver && <Text style={{ fontSize: '30px' }}>{score}</Text>}
+        <View style={{ zIndex: 1 }}>
+          <Text>
+            {"\n"}{"\n"}{"\n"}
+          </Text>
+          {isGameOver && <Text>Game Over!
+            {"\n"}
+            Score: {score}
+            {"\n"}
+            <Button onPress={restartGame}
+              title="Restart Game"
+              color="cyan"
+              accessibilityLabel="Learn more about this purple button" />
+          </Text>}
+        </View>
 
         <Bird
           birdBottom={birdBottom}

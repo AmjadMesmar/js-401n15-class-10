@@ -1,7 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
-
-const Obstacles = ({ 
+import { View, ImageBackground, StyleSheet } from 'react-native';
+// https://noobtuts.com/content/unity/2d-flappy-bird-game/obstacle.png
+const Obstacles = ({
     obstaclesWidth,
     obstaclesHeight,
     obstaclesLeft,
@@ -23,6 +23,10 @@ const Obstacles = ({
                 left: obstaclesLeft,
                 bottom: randomBottom + obstaclesHeight + gap,
             }}>
+                {/* <ImageBackground source=
+                    {{ uri: 'https://noobtuts.com/content/unity/2d-flappy-bird-game/obstacle.png' }}
+                    resizeMode="cover" style={styles.image}>
+                </ImageBackground> */}
             </View>
             <View style={{
 
@@ -33,11 +37,27 @@ const Obstacles = ({
                 left: obstaclesLeft,
                 bottom: randomBottom,
             }}>
+                {/* <ImageBackground source=
+                    {{ uri: 'https://noobtuts.com/content/unity/2d-flappy-bird-game/obstacle.png' }}
+                    resizeMode="cover" style={styles.image}>
+                </ImageBackground> */}
             </View>
-            
+
         </>
 
     )
 }
+
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//     },
+//     image: {
+//         flex: 1,
+//         justifyContent: "center",
+//         width: 60,
+//         height: 300,
+//     },
+// });
 
 export default Obstacles;
